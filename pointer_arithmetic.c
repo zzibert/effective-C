@@ -2,9 +2,13 @@
 #include <stdlib.h>
 
 int main(void) {
-    int arr[100];
-    int *arrp1 = &arr[40];
-    int *arrp2 = arrp1 + 20; // arrp2 points to arr[60]
+    int m[3] = {1, 2, 3};
 
-    printf("%ld\n", arrp2 - arrp1);
+    int *pi;
+    int j = 0;
+    for (pi = &m[0]; pi < &m[3]; ++pi) {
+        j += *pi;
+    }
+
+    printf("Sum of elements %d", j);
 }
