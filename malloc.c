@@ -1,4 +1,6 @@
 #include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
 
 typedef struct {
      char c[10];
@@ -7,11 +9,12 @@ typedef struct {
 } widget;
 
 int main(void) {
-    widget *p = malloc(sizeof(widget));
+    widget *p = (widget *)malloc(sizeof(widget));
 
-    if (p == NULL) { // Handle allocation error
+    widget w = {"abc", 9, 3.2};
 
-    }
-    // Continue processing
+    memcpy(p, &w, sizeof(widget)); // coerced to void * pointers
+
+    printf("p.i = %s.\n", p->c);
     
 }
