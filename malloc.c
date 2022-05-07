@@ -2,19 +2,13 @@
 #include <stdio.h>
 #include <string.h>
 
-typedef struct {
-     char c[10];
-     int i;
-     double d;
-} widget;
-
 int main(void) {
-    widget *p = (widget *)malloc(sizeof(widget));
-
-    widget w = {"abc", 9, 3.2};
-
-    memcpy(p, &w, sizeof(widget)); // coerced to void * pointers
-
-    printf("p.i = %s.\n", p->c);
-    
+    char *str = (char *)malloc(16);
+    if (str) {
+        strncpy(str, "123456789abcdef", 15);
+        printf("str = %s.\n", str);
+        free(str);
+        return EXIT_SUCCESS;
+    }
+    return EXIT_FAILURE;
 }
