@@ -11,4 +11,9 @@ int main(void) {
     size_t str_len = strlen(str);
 
     printf("Length of string is %zu\n", str_len);
+
+    // dynamically allocationg storage for narrow string functions
+
+    char str1[] = "Here comes the sun";
+    char *str2 = malloc(strlen(str1)+1);
 }
